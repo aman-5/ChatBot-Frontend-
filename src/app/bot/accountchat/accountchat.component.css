@@ -1,0 +1,15 @@
+.table{
+    font-weight: bold;
+}
+.a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.rcorners2 {
+    border-radius: 25px;
+    border: 8px solid #73AD21;
+   width: 60%; 
+   
+   
+  }

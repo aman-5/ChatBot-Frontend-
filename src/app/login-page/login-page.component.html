@@ -1,0 +1,17 @@
+<div class="container col-md-6">
+    <h1 style="color:blue">Admin Login</h1>
+    <form (ngSubmit)="adminLogin()">
+        <div class="form-group">
+          <label for="aduser">User Name</label>
+          <input type="text" class="form-control" name="userName" [(ngModel)]="userName" placeholder="Enter User Name">
+          
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Password">
+        </div> <br>
+        
+        <button type="submit" class="btn btn-primary" (click)="adminLogin">Login</button>
+        
+      </form>
+</div>

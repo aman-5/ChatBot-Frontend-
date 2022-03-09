@@ -1,0 +1,19 @@
+<div class="container col-md-6">
+  <h1 style="color:blue">User Login</h1>
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="userName">UserName</label>
+    <input type="text" formControlName="userName" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter User Name">
+   
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password">
+  </div><br>
+  <button type="submit" class="btn btn-primary" (click)="postNormalQueryDetails()"> SignIn  </button> <br> <br>
+  <!-- <button type="submit" class="btn btn-primary" [routerLink]="['chatbot']" > SignIn  </button> <br> <br> -->
+
+  <pre><button  type="submit" class="btn btn-primary" [routerLink]="['signup']"> SignUp</button>  <button  type="submit" [routerLink]="['admin']"  class="btn btn-primary">Admin</button></pre>
+</form>
+</div>
+

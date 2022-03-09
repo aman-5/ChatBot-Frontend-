@@ -1,0 +1,45 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color:aliceblue;">Chat Bot</h1>
+
+
+        <div class="d-flex">
+
+            <button type="button" class="btn btn-success" ><a (click)="deleteLocalStorage()" class="a" href="http://localhost:4200/" >Log Out</a></button>
+
+        </div>
+    </div>
+
+    
+</nav> <br> <br>
+
+<div class="rcorners2 container col-md-8 row-md-5">
+
+<div class="row">
+<div class="container">
+    <button type="button" class="btn btn-primary" ><a  class="a" href="http://localhost:4200/chatbot" >Chat Bot</a></button>
+    <button type="button" class="btn btn-primary" ><a  class="a" href="http://localhost:4200/shopbot" >Shopping</a></button>
+    <button type="button" class="btn btn-primary"><a  class="a" href="http://localhost:4200/shopbot" >Orders</a></button> 
+    <button type="button" class="btn btn-primary"><a  class="a" href="http://localhost:4200/paybot" >Payment</a></button> 
+    <button type="button" class="btn btn-primary"> <a  class="a" href="http://localhost:4200/otherbot" >Other Issues</a> </button>
+</div>
+</div>
+<br> <br>
+<div class="row">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            *ngFor="let accountdetails of accountdetailsdata">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{accountdetails.queryName}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    Click here to know more
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>{{accountdetails.queryDescription}}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>
+</div>

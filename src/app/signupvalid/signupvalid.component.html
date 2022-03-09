@@ -1,0 +1,110 @@
+<div class="container col-md-6">
+    <h1 style="color:blue">User Sign Up</h1>
+<div class="register-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+
+        <div class="form-group">
+            <label>User Name</label>
+            <input type="text" id="userName" name="userName" formControlName="userName" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }" />
+            <div *ngIf="submitted && f['userName'].errors" class="invalid-feedback">
+                <div *ngIf="f['userName'].errors['required']">Username is required</div>
+                <div *ngIf="f['userName'].errors['minlength']">
+                    Username must be at least 10 characters
+                </div>
+                <div *ngIf="f['userName'].errors['maxlength']">
+                    Username must not exceed 15 characters
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Emai ID</label>
+            <input type="text" formControlName="emailID" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['emailID'].errors }" />
+            <div *ngIf="submitted && f['emailID'].errors" class="invalid-feedback">
+                <div *ngIf="f['emailID'].errors['required']">Emailid is required</div>
+                <div *ngIf="f['emailID'].errors['minlength']">
+                    emailid must be at least 6 characters
+                </div>
+                <div *ngIf="f['emailID'].errors['maxlength']">
+                    emailid must not exceed 20 characters
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" formControlName="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Password is required</div>
+                <div *ngIf="f['password'].errors['minlength']">
+                    Password must be at least 8 characters
+                </div>
+                <div *ngIf="f['password'].errors['maxlength']">
+                    Username must not exceed 40 characters
+                </div>
+                <div *ngIf="f['password'].errors['pattern']">
+                    Must contain at least 1 Special Character! 
+                </div>
+                    
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="firstName" name="firstName" formControlName="firstName" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+            <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                <div *ngIf="f['firstName'].errors['required']">Username is required</div>
+                <div *ngIf="f['firstName'].errors['minlength']">
+                    Username must be at least 4 characters
+                </div>
+                <div *ngIf="f['firstName'].errors['maxlength']">
+                    Username must not exceed 10 characters
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="lastName" name="lastName" formControlName="lastName" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+            <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                <div *ngIf="f['lastName'].errors['required']">Username is required</div>
+                <div *ngIf="f['lastName'].errors['minlength']">
+                    Username must be at least 4 characters
+                </div>
+                <div *ngIf="f['lastName'].errors['maxlength']">
+                    Username must not exceed 10 characters
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="text" id="mobile" name="mobile" formControlName="mobile" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+            <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+                <div *ngIf="f['mobile'].errors['required']">Username is required</div>
+                <div *ngIf="f['mobile'].errors['minlength']">
+                    Username must be at least 10 characters
+                </div>
+                <div *ngIf="f['mobile'].errors['maxlength']">
+                    Username must not exceed 10 characters
+                </div>
+            </div>
+        </div> <br> <br>
+
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"  > Sign Up </button>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="container col-md-6">
+  <h1 style="color:blue">User SignUp</h1>
+<form [formGroup]="formValue">
+  <div class="form-group">
+    <label for="userName">User Name</label>
+    <input type="text" formControlName="userName" class="form-control" id="userName" placeholder="Enter User Name">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password">
+  </div><br>
+
+    <div class="form-group">
+      <label for="emailID">Email Id</label>
+      <input type="email" formControlName="emailID" class="form-control" id="emailID"  placeholder="Enter Email ID">
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" formControlName="firstName" id="firstName"  placeholder="Enter First Name">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Enter Last Name">
+  </div> <br>
+  <button type="submit" class="btn btn-primary" (click)="postSignUpDetails()" >SignUp</button>
+  <!-- <button type="submit" class="btn btn-primary" routerLink="['chatbot']" >SignUp</button>  -->
+</form>
+</div>
+

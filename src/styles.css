@@ -1,0 +1,10 @@
+body {
+    background-color: #F3EBF6;
+    background: url(https://i.postimg.cc/brt7tn4x/bot1.png);
+    /* background: url(https://www.photos-public-domain.com/wp-content/uploads/2012/01/peach-colored-fabric-texture.jpg); */
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

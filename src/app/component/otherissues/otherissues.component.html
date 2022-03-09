@@ -1,0 +1,72 @@
+<body>
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+            <h1 style="color:aliceblue;">Admin Dashboard</h1>
+            <button type="button" class="btn btn-success" ><a  class="a" href="http://localhost:4200/admin/orders" >Orders</a></button>
+            <button type="button" class="btn btn-success" ><a  class="a" href="http://localhost:4200/admin/accountdetails" >Account Details</a></button>
+            <button type="button" class="btn btn-success" ><a  class="a" href="http://localhost:4200/admin/payment" >Payment</a></button>
+            <button type="button" class="btn btn-success" ><a  class="a" href="http://localhost:4200/admin/shopping" >Shopping</a></button>
+            <button type="button" class="btn btn-success" ><a  (click)="deleteLocalStorage()" class="a" href="http://localhost:4200/" >Log Out</a></button>
+            <div class="d-flex">
+                <button type="button" class="btn btn-success" (click)="clickAddOtherIssues()">Add Querry</button>
+            </div>
+        </div>
+    </nav>
+    <div class="table">
+        <table class="table mt-3 table-border table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Query Name</th>
+                    <th scope="col">Query Description</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let otherissues of otherissuesdata">
+                    <td>{{otherissues.id}}</td>
+                    <td>{{otherissues.queryName}}</td>
+                    <td>{{otherissues.queryDescription}}</td>
+                    <td>
+                        <button button type="button" class="btn btn-info" (click)="onEdit(otherissues)">Edit</button>
+                        <button class="btn btn-danger ex-3" (click)="deleteOtherIssues(otherissues)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Query Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onCloseHandled()"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            <label for="queryName">Query Name</label>
+                            <input type="text" formControlName="queryName" class="form-control" id="queryName"
+                                aria-describedby="queryHelp" placeholder="Enter query name">
+                        </div>
+                        <div class="form-group">
+                            <label for="queryDesc">Query Description</label>
+                            <input type="text" formControlName="queryDescription" class="form-control"
+                                id="queryDescription" placeholder="Query Description">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancel" class="btn btn-warning" (click)="onCloseHandled()">Close</button>
+                    <button type="button" class="btn btn-primary" *ngIf="showAdd"
+                        (click)="postOtherIssues()">Add</button>
+                    <button type="button" class="btn btn-primary" *ngIf="showUpdate"
+                        (click)="updateOtherIssues()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
