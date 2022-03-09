@@ -1,27 +1,47 @@
-# AskMe
+# ChatBot-Frontend-
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
+Chatbot HelpDesk
 
-## Development server
+Make an application like a chat bot where a company can use it as a HelpDesk with the following features:-
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Login Screen(this is the Default page)
 
-## Code scaffolding
+1) Username (no special character allowed except underscore and length should have 10 characters).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2) Password (8 characters, Upper- and Lower-case combination, should have at least 1 number, 1 Special character).
 
-## Build
+3) If the user not exists, validation should come saying , “User is invalid, Please Register”.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4) “Sign Up” button should be available.
 
-## Running unit tests
+Registration Screen
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1) User once click on “Sign Up”, then this screen should come up.
 
-## Running end-to-end tests
+2) It only contains fields like - First Name, Last Name, User Name, Email, Phone Number.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3) After entering the fields where he can click on “Registration” button, it redirects to Login Screen.
 
-## Further help
+Admin User
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1) Admin user can create a new Queries by adding fields like Query Name, Description and Department in “Add Queries” Screen and should store in a respective Queries table in DB.
+
+2) Admin user can even edit/delete the respective Queries and should reflect same in DB.
+
+3) Try to have all Queries saved in DB related to departments like Payroll/Service desk, for ex: Payslip,PF,Gratuity,Leave balance ,Incident, Service Orders etc.
+
+Normal User
+
+1) Application should be designed in such a way that it looks like a chat box , for instance like a Microsoft teams or Skype or Whats up chat window.
+
+2) when user input a query- it should initially send a welcome message and then ask about the which department/query the user is looking for.
+
+3) Based on the user query/department as a input, it should give accurate answers by matching the input with respective DB table.
+
+4) After giving the right output, bot should also ask any more queries and finally should prompt a thank you message.
+
+5) If time permits, try to share a PDF/word document in a chat window also, for ex: if the query by user is related to “Payslip”, where the user can view or even save it for later.
+
+Use Database
+
+Create Web API to fetch records from database
